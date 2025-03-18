@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { getFrameMetadata } from '@coinbase/onchainkit/frame';
-import type { Metadata } from 'next';
-const frameMetadata = getFrameMetadata({
+import { getFrameMetadata } from "@coinbase/onchainkit/frame";
+import type { Metadata } from "next";
+var frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Let's go!"
-    }
+      label: "Let's go!",
+    },
   ],
   image: `${process.env.NEXT_PUBLIC_BASE_URL}/initial.gif`,
   post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
 });
 
-export const metadata: Metadata = {
-  title: 'Lilysay Farcaster frame',
-  description: 'Initial frame',
+export var metadata: Metadata = {
+  title: "Lilysay Farcaster frame",
+  description: "Initial frame",
   openGraph: {
-    title: 'Lilysay Farcaster frame',
-    description: 'Initial frame',
+    title: "Lilysay Farcaster frame",
+    description: "Initial frame",
     images: ["/initial.png"],
   },
   other: {
