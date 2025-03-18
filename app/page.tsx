@@ -42,7 +42,7 @@ export default function Home() {
             <strong>
               This is a new test for changes. Adding some more copy to test
             </strong>
-            : Click the button below to trigger a test event.
+            : Lets try this again
           </li>
           <li>Check the console or API response to verify updates.</li>
         </ol>
