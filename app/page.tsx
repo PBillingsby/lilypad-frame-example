@@ -44,7 +44,7 @@ export default function Home() {
             </strong>
             : Lets try this again
           </li>
-          <li>Check the console or API response to verify updates.</li>
+          <li>We're going to try again!</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
