@@ -65,7 +65,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            🔄 Run Test
+            🔄 Run Tests
           </a>
         </div>
       </main>
