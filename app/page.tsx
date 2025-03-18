@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getFrameMetadata } from "@coinbase/onchainkit/frame";
 import type { Metadata } from "next";
+import { useEffect, useState } from "react"; // Introduce unused imports
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -8,8 +9,8 @@ const frameMetadata = getFrameMetadata({
       label: "Test Button",
     },
   ],
-  image: `${process.env.NEXT_PUBLIC_BASE_URL}/test.gif`, // Changed image
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=2`, // Changed id to test state changes
+  image: `${process.env.NEXT_PUBLIC_BASE_URL}/test.gif`,
+  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=2`,
 });
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lilysay Farcaster Frame (Test)",
     description: "Updated frame for testing",
-    images: ["/test.png"], // Changed test image
+    images: ["/test.png"],
   },
   other: {
     ...frameMetadata,
@@ -26,8 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  var badVariable = "This should not use var"; // Introduce a bad practice
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div
+      className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
+      style={{ backgroundColor: "red" }} // Introduce inline styles (bad practice)
+    >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -46,6 +52,11 @@ export default function Home() {
           </li>
           <li>We're going to try again!</li>
         </ol>
+
+        {/* Introduce dangerouslySetInnerHTML for security warning */}
+        <div
+          dangerouslySetInnerHTML={{ __html: "<script>alert('XSS')</script>" }}
+        ></div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
