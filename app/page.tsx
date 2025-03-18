@@ -39,8 +39,8 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            <strong>Testing changes</strong>: Click the button below to trigger
-            a test event.
+            <strong>This is a new test for changes</strong>: Click the button
+            below to trigger a test event.
           </li>
           <li>Check the console or API response to verify updates.</li>
         </ol>
