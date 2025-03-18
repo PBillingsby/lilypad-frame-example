@@ -105,7 +105,7 @@ async function generateImage(id: string, prompt: string) {
     await fs.writeFile(imagePath, imageBuffer);
     requestStore[id] = { prompt, status: 'completed' };
   } catch (error) {
-    console.error('Error generating images:', error);
+    console.error('Error generating image:', error);
     requestStore[id] = { prompt, status: 'error' };
   }
 }
